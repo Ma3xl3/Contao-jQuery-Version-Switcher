@@ -26,7 +26,7 @@ class jQueryVersionSwitcher extends \PageRegular
 	 */
 	public function jqueryDisableTmp($objPage, $objLayout, $self)
 	{
-		if(  $objLayout->addJQuery != 1 || $objLayout->jQueryVersion == 'contao_version')
+		if(  $objLayout->addJQuery != 1 || $objLayout->jQueryVersion == 'contao_version' || $objLayout->jQueryVersion == '')
 			return;
 		
 		$this->jswitcher = true;
