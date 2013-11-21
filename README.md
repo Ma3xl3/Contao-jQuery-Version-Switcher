@@ -7,11 +7,11 @@ Currently jQuery versions from 1.3.2 to 2.0.3 are supported.
 
 ## Requirements
 
-* Contao 3 / Contao 3.1
+* Contao 3 / Contao 3.1 / Contao 3.2
 
 ## Note
 
-* Contao 3.1 and higher supports now "jQuery - local file", "jQuery - googleapis.com" and "jQuery - googleapis.com with local fallback"
+* Contao 3.1 / Contao 3.2 supports now "jQuery - local file", "jQuery - googleapis.com" and "jQuery - googleapis.com with local fallback"
 * Contao 3.0: This extension only works, when "jQuery source" has "jQuery - local file" selected.
 * Older jQuery versions (less than version 1.6.4) may have some compatibility issues with the "jQuery templates"
 * jQuery 2.0.3 does not support older browsers like IE8!
