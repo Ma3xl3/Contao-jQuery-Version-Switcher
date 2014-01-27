@@ -10,6 +10,11 @@
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
+/**
+ * Register the namespace
+ */
+ClassLoader::addNamespace('WebCreations');
+
 
 /**
  * Register the classes
@@ -17,5 +22,5 @@
 ClassLoader::addClasses(array
 (
 	// Classes
-	'jQueryVersionSwitcher' => 'system/modules/jQueryVersionSwitcher/classes/jQueryVersionSwitcher.php',
+	'WebCreations\jQueryVersionSwitcher' => 'system/modules/jQueryVersionSwitcher/classes/jQueryVersionSwitcher.php',
 ));

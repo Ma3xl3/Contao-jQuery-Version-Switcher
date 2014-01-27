@@ -22,9 +22,17 @@ else {
 
 $GLOBALS['TL_JQUERY_VERSIONS'] = array(
 	'contao_version' => array(),
+	'2.1.0' => array(
+		'local' => 'system/modules/jQueryVersionSwitcher/assets/js/jquery/jquery-2.1.0.min.js',
+		'googleapis' => 'ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js',
+	),
 	'2.0.3' => array(
 		'local' => 'system/modules/jQueryVersionSwitcher/assets/js/jquery/jquery-2.0.3.min.js',
 		'googleapis' => 'ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js',
+	),
+	'1.11.0' => array(
+		'local' => 'system/modules/jQueryVersionSwitcher/assets/js/jquery/jquery-1.11.0.min.js',
+		'googleapis' => 'ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js',
 	),
 	'1.10.2' => array(
 		'local' => 'system/modules/jQueryVersionSwitcher/assets/js/jquery/jquery-1.10.2.min.js',

@@ -20,6 +20,7 @@
  */
 class jQueryVersionSwitcher extends \PageRegular
 {
+	protected $addJquery;	
 	
 	/**
 	 * Disable jquery first if Version Switcher enabled
