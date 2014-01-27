@@ -3,7 +3,7 @@ Contao-jQuery-Version-Switcher
 
 Select different jQuery versions in Contao. This extension allows you to select/change the jQuery version in the page layout settings of the contao backend.
 
-Currently jQuery versions from 1.3.2 to 2.0.3 are supported.
+Currently jQuery versions from 1.3.2 to 2.1.0 are supported.
 
 ## Requirements
 
@@ -18,9 +18,15 @@ Currently jQuery versions from 1.3.2 to 2.0.3 are supported.
 
 ## Changelog
 
+##### Version 3.1.2 stable
+
+* Supports the following jQuery versions: 2.1.0 / 2.0.3 / 1.11.0 / 1.10.2 / 1.9.1 / 1.8.3 / 1.7.2 / 1.6.4 / 1.5.2 / 1.4.4 / 1.3.2
+* Added jQuery 2.1.0 and 1.11.0
+* Some small code changes
+
 ##### Version 3.1.1 stable
 
-* Supports the following jQuery versions: 2.0.3 / 1.10.2 / 1.9.1 / 1.8.3 / 1.7.2 / 1.6.4 / 1.5.2 / 1.4.4 / 1.3.2
+* Supports the following jQuery versions: 2.1.0 2.0.3 / 1.10.2 / 1.9.1 / 1.8.3 / 1.7.2 / 1.6.4 / 1.5.2 / 1.4.4 / 1.3.2
 * Added version switcher support for googleapis and googleapis with fallback (not available in contao 3.0)
 * Added jQuery 2.0.3 and 1.10.2
 * Removed jQuery 1.10.1 (changes automatically to 1.10.2 if 1.10.1 was used)
