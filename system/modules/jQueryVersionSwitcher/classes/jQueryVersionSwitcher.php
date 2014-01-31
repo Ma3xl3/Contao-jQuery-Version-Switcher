@@ -11,6 +11,11 @@
  * @copyright Web-Creations 2013
  */
 
+/**
+ * Namespace
+ */
+namespace WebCreations;
+
 
 /**
  * Class jQueryVersionSwitcher
