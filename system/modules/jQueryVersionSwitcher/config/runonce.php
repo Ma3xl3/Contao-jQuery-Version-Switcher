@@ -26,7 +26,12 @@ class jQueryVersionSwitcherRunonce extends Controller
 		$this->import('Database');
 		
 		//update old jquery versions
+		//1.10.1 to 1.10.2
 		$this->Database->query("UPDATE tl_layout SET jQueryVersion='1.10.2' WHERE jQueryVersion='1.10.1'");
+		//1.11.0 to 1.11.1
+		$this->Database->query("UPDATE tl_layout SET jQueryVersion='1.11.1' WHERE jQueryVersion='1.11.0'");
+		//2.1.0 to 2.1.1
+		$this->Database->query("UPDATE tl_layout SET jQueryVersion='2.1.1' WHERE jQueryVersion='2.1.0'");
 	}
 }
 
