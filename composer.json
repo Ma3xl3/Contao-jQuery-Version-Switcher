@@ -1,0 +1,33 @@
+{
+	"name": "ma3xl3/contao-jquery-version-switcher",
+	"description": "Select different jQuery versions in Contao. This extension allows you to select/change the jQuery version in the page layout settings of the contao backend.",
+	"keywords": ["contao","jquery","change jquery version"],
+	"type": "contao-module",
+	"homepage":"https://github.com/Ma3xl3/Contao-jQuery-Version-Switcher",
+	"license": "LGPLv3",
+	"authors": [
+        {
+            "name": "Markus Kinzl",
+            "email": "markus.kinzl@web-creations.at",
+            "homepage": "http://www.web-creations.at",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+		"issues": "https://github.com/Ma3xl3/Contao-jQuery-Version-Switcher/issues",
+		"wiki": "https://github.com/Ma3xl3/Contao-jQuery-Version-Switcher/blob/master/README.md",
+		"irc":"irc://irc.freenode.org/contao.dev",
+		"source": "https://github.com/Ma3xl3/Contao-jQuery-Version-Switcher"
+	},
+	"require": {
+		"php": ">=5.3.2",
+		"contao/core": ">=3.0,<3.3"
+	},
+	"extra": {
+		"contao": {
+			"sources": {
+				"contao": "system/modules/jQueryVersionSwitcher"
+			}
+		}
+	}
+}
