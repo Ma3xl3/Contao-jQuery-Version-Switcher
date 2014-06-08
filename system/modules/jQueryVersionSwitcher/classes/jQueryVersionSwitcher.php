@@ -3,12 +3,12 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2013 Leo Feyer
+ * Copyright (c) 2005-2014 Leo Feyer
  *
  * @package   jQueryVersionSwitcher
  * @author    Markus Kinzl
  * @license   LGPL
- * @copyright Web-Creations 2013
+ * @copyright Web-Creations 2014
  */
 
 /**
@@ -20,7 +20,7 @@ namespace WebCreations;
 /**
  * Class jQueryVersionSwitcher
  *
- * @copyright  Web-Creations 2013
+ * @copyright  Web-Creations 2014
  * @author     Markus Kinzl
  */
 class jQueryVersionSwitcher extends \PageRegular
@@ -42,7 +42,6 @@ class jQueryVersionSwitcher extends \PageRegular
 		$objLayout->addJQuery = '';
 	}
 	
-	
 	/**
 	 * Add new jquery Version
 	 */
@@ -50,7 +49,46 @@ class jQueryVersionSwitcher extends \PageRegular
 	{
 		// check if jswitcher is enabled
 		if( !$this->jswitcher )
-			return;		
+			return;
+		
+		// jQuery scripts
+		if ($objLayout->jSource == 'j_googleapis' || $objLayout->jSource == 'j_fallback')
+		{
+			$blnXhtml = ($objPage->outputFormat == 'xhtml');
+			
+			$self->Template->mooScripts .= \Template::generateScriptTag((\Environment::get('ssl') ? 'https://' : 'http://') . 'code.jquery.com/jquery-' . $objLayout->jQueryVersion . '.min.js', $blnXhtml) . "\n";
+	
+			// Local fallback (thanks to DyaGa)
+			if ($objLayout->jSource == 'j_fallback')
+			{
+				$self->Template->mooScripts .= \Template::generateInlineScript('window.jQuery || document.write(\'<script src="' . $GLOBALS['TL_JQUERY_VERSIONS'][$objLayout->jQueryVersion]['local'] . '">\x3C/script>\')', $blnXhtml) . "\n";
+			}
+		}
+		else
+		{
+			$arrAppendJs = array( $GLOBALS['TL_JQUERY_VERSIONS'][$objLayout->jQueryVersion]['local'] . '|static' );
+			$GLOBALS['TL_JAVASCRIPT'] = array_merge($arrAppendJs, $GLOBALS['TL_JAVASCRIPT']);
+		}
+		
+		//remove mootools-request.js
+		$findMooReq = array_search('assets/mootools/core/' . MOOTOOLS . '/mootools-request.js|static', $GLOBALS['TL_JAVASCRIPT']);
+		
+		if( $findMooReq !== false )
+			unset($GLOBALS['TL_JAVASCRIPT'][$findMooReq]);
+		
+		//restore old addJquery variable
+		$objLayout->addJQuery = $objLayout->addJQueryTmp;
+	}
+	
+	
+	/**
+	 * Add new jquery Version (For Contao lt 3.3)
+	 */
+	public function changeVersionV3_2($objPage, $objLayout, $self)
+	{
+		// check if jswitcher is enabled
+		if( !$this->jswitcher )
+			return;
 		
 		//add jquery
 		if ($objLayout->jSource == 'j_googleapis' || $objLayout->jSource == 'j_fallback')

@@ -3,12 +3,12 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2013 Leo Feyer
+ * Copyright (c) 2005-2014 Leo Feyer
  *
  * @package   jQueryVersionSwitcher
  * @author    Markus Kinzl
  * @license   LGPL
- * @copyright Web-Creations 2013
+ * @copyright Web-Creations 2014
  */
 
 

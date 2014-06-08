@@ -3,17 +3,21 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2013 Leo Feyer
+ * Copyright (c) 2005-2014 Leo Feyer
  *
  * @package   jQueryVersionSwitcher
  * @author    Markus Kinzl
  * @license   LGPL
- * @copyright Web-Creations 2013
+ * @copyright Web-Creations 2014
  */
 
 if( version_compare( VERSION, '3.1', '<' ) ) {
-	$GLOBALS['TL_HOOKS']['generatePage'][] = array('jQueryVersionSwitcher', 'changeVersionV3_0');
-}	
+	$GLOBALS['TL_HOOKS']['generatePage'][] = array('jQueryVersionSwitcher', 'changeVersionV3_0');	
+}
+elseif( version_compare( VERSION, '3.3', '<' ) ) {
+	$GLOBALS['TL_HOOKS']['getPageLayout'][] = array('jQueryVersionSwitcher', 'jqueryDisableTmp');
+	$GLOBALS['TL_HOOKS']['generatePage'][] = array('jQueryVersionSwitcher', 'changeVersionV3_2');
+}
 else {
 	$GLOBALS['TL_HOOKS']['getPageLayout'][] = array('jQueryVersionSwitcher', 'jqueryDisableTmp');
 	$GLOBALS['TL_HOOKS']['generatePage'][] = array('jQueryVersionSwitcher', 'changeVersion');
